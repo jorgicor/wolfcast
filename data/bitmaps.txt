@@ -1,0 +1,6 @@
+1 wall 0 0
+2 wall2 0 0
+3 ceil 0 0
+4 floor 0 0
+5 door 0 0
+~

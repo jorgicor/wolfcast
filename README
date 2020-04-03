@@ -1,0 +1,87 @@
+wolfcast - Wolfenstein-like raycasting
+======================================
+
+This is a quick implementation of a Wolfenstein-like raycasting rendering.
+Currently, it renders walls, floors, ceilings, sliding doors and push walls,
+but sprite rendering is still missing, and comments missing everywhere...
+
+Someday I'll finish it...
+
+The important file is game/raycast.c, the rest is code that I use on my games
+for SDL initialization, etc.
+
+All theory comes from this famous tutorial:
+
+https://permadi.com/1996/05/ray-casting-tutorial-table-of-contents/ 
+
+This is free software. See the file `COPYING` for copying conditions.
+
+GitHub: https://github.com/jorgicor/wolfcast
+
+Getting the code from revision control
+======================================
+
+If you cloned the project from a revision control system (i.e. GitHub), you
+will need first to use the GNU autotools to generate some files, in particular,
+the `configure` script. Use:
+
+    $ ./bootstrap
+
+to generate the required files. You will need *GNU autoconf*, *GNU automake*,
+*GNU texinfo*.
+
+Compiling on Unixes
+===================
+
+The fastest way is to have SDL 2.0 installed and then type:
+
+./configure --enable-x11 --enable-sdl-datadir --enable-debugmode
+
+Play with removing --enable-x11 if it fails on your system. Removing
+--enable-debugmode makes the program start in fullscreen.
+
+Then, to compile type:
+
+make
+
+An executable `app` is generated. Then run by typing:
+
+./app 
+
+You can change between fullscreen and windowed mode by pressing Alt + Enter.
+
+Compiling on Windows
+====================
+
+Install cygwin with i686-w64-ming32-gcc, bc.
+
+Go to libsdl.org and download the development libraries for mingw.
+
+Inside cygwin terminal and inside the sdl libraries folder type 'make native':
+this will install the library.
+
+Then compile the project with:
+./configure --host=i686-w64-mingw32 --enable-sdl-datadir
+make
+
+Data
+====
+
+The folder `data` must be in the same directory as the generated executable.
+It currently contains some copyrighted material from the game `Blake Stone:
+Aliens of Gold` by Apogee Software (ok, that is one wall, one door, one floor
+and one ceiling textures). Please, don't sue me for this.
+
+There is one wall texture by me, the sand-like: use that one at will.
+
+You can purchase the full Blake Stone game from:
+
+https://www.gog.com/game/blake_stone_aliens_of_gold
+
+Installing
+==========
+
+Currently the configuration and make processed has not been tested for
+installing, only for compiling and test this code...
+
+
